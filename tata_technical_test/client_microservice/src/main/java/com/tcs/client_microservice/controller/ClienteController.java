@@ -1,6 +1,7 @@
 package com.tcs.client_microservice.controller;
 
-import com.tcs.client_microservice.model.Cliente;
+import com.tcs.client_microservice.application.dto.request.CreateClientUserRequest;
+import com.tcs.client_microservice.model.Client;
 import com.tcs.client_microservice.service.ClienteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -14,18 +15,23 @@ public class ClienteController {
     private ClienteService clienteService;
 
     @GetMapping
-    public List<Cliente> listarClientes() {
+    public List<Client> listarClientes() {
         return clienteService.listarTodos();
     }
 
+    @GetMapping("/{id}")
+    public Client buscarCliente(@PathVariable Long id) {
+        return clienteService.buscarPorId(id);
+    }
+
     @PostMapping
-    public Cliente crearCliente(@RequestBody Cliente cliente) {
-        return clienteService.crear(cliente);
+    public Client crearCliente(@RequestBody CreateClientUserRequest client) {
+        return clienteService.crear(client);
     }
 
     @PutMapping("/{id}")
-    public Cliente actualizarCliente(@PathVariable Long id, @RequestBody Cliente clienteActualizado) {
-        return clienteService.actualizar(id, clienteActualizado);
+    public Client actualizarCliente(@PathVariable Long id, @RequestBody Client clientActualizado) {
+        return clienteService.actualizar(id, clientActualizado);
     }
 
     @DeleteMapping("/{id}")

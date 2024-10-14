@@ -19,7 +19,7 @@ public class Movimiento {
     private double saldo;
 
     @ManyToOne
-    @JoinColumn(name = "cuenta_id")
+    @JoinColumn(name = "cuenta_id", nullable = false)
     private Cuenta cuenta;
 }
 

@@ -8,14 +8,14 @@ import lombok.Setter;
 @Inheritance(strategy = InheritanceType.JOINED)
 @Getter
 @Setter
-public class Persona {
+public class Person {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String nombre;
-    private String genero;
-    private int edad;
-    private String identificacion;
-    private String direccion;
-    private String telefono;
+    private String name;
+    private String gender;
+    private int age;
+    private String identification;
+    private String address;
+    private String phone;
 }

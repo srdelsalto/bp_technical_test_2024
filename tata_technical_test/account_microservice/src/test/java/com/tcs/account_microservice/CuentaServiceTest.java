@@ -21,6 +21,7 @@ public class CuentaServiceTest {
         cuenta.setTipo("Ahorros");
         cuenta.setSaldoInicial(1000.0);
         cuenta.setEstado(true);
+        cuenta.setClientId(Long.parseLong("7"));
 
         Cuenta creada = cuentaService.crear(cuenta);
         assertNotNull(creada.getNumeroCuenta());

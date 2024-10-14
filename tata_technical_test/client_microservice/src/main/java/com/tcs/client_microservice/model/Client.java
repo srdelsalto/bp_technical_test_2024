@@ -7,8 +7,7 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-public class Cliente extends Persona {
-    private String clienteId;
-    private String contrasena;
-    private boolean estado;
+public class Client extends Person {
+    private String password;
+    private boolean status;
 }
