@@ -1,2 +1,2 @@
-# tata_technical_test_2023
-Tata Java Technical Test
+# bp_technical_test_2024
+BP Java Technical Test
